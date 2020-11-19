@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './UserItem.module.css'
 import { AiFillDollarCircle, AiOutlineMail, AiFillPhone, AiOutlineUsergroupAdd} from "react-icons/ai";
+import {HiOutlineUserRemove} from 'react-icons/hi'
 
 const UserItem = ({user,index, isConnections, handleConnectUser}) => {
     const {name, email, phone, image, background, salary} = user
@@ -25,7 +26,12 @@ const UserItem = ({user,index, isConnections, handleConnectUser}) => {
             onClick={(e)=> handleConnectUser(user, index, e.target.value)} 
             className="btn btn-outline-primary px-5 mb-4"
             >
-             <AiOutlineUsergroupAdd/> {isConnections[index] ? "DISCONNECT" : "CONNECT"}
+              {
+              isConnections[index] ? 
+              (<><HiOutlineUserRemove/> DISCONNECT</> )
+              :
+              ( <><AiOutlineUsergroupAdd/> CONNECT</>)
+              }
             </button>
             </div>
             </div>
