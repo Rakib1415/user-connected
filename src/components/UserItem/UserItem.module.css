@@ -4,6 +4,12 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin: 10px 10px;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+.user:hover {
+    transform: scale(1.05);
 }
 .imgContainer{
     width: 100%;

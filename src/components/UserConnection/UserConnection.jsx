@@ -7,9 +7,12 @@ const UserConnection = () => {
     const [users, setUsers] = useState([])
     const [selectedUsers, setSelectedUsers] = useState([])
     const [isConnections, setIsConnections] = useState([])
+    const [searchTerm, setSearchTerm] = useState('')
+
+    
 
     useEffect(()=>{
-        setUsers(fakeData)
+       setUsers(fakeData)
     },[]);
 
     const handleConnectUser = (user, index, value) => {
@@ -30,13 +33,25 @@ const UserConnection = () => {
             setIsConnections(newIsConnections)
         }      
     }
-
+    const handleSearch = term => {
+        // console.log(term)
+        setSearchTerm(term)
+        // const newUsers = searchPerform()
+        // setUsers(newUsers)
+    }
+    function searchPerform(userData){
+       return userData.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
     // console.log(selectedUsers)
+    
     return (
         <div>
-            <Header/>
+            <Header 
+            searchTerm={searchTerm}
+            handleSearch={handleSearch}
+            />
             <UserLists
-            users={users}
+            users={searchPerform(users)}
             handleConnectUser={handleConnectUser}
             selectedUsers={selectedUsers}
             isConnections={isConnections}
