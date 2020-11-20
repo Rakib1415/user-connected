@@ -7,6 +7,7 @@ const Header = (props) => {
            <nav className={styles.items}>
                <div className={styles.searchBox}>
                    <input onChange={(e)=>props.handleSearch(e.target.value)} className="form-control" value={props.searchTerm} type="text" placeholder="Search User"/>
+                   <button onClick={props.toggleUserForm} className="btn btn-secondary mx-2">Add User</button>
                </div>
                 <ul>
                     <li><a href="#">Home</a></li>

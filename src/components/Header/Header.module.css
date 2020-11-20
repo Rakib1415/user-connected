@@ -37,10 +37,12 @@
 }
 
 .searchBox{
-    width: 30%;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 .searchBox input{
-    width: 100%;
+    width: 75%;
 
 }
