@@ -1,7 +1,6 @@
 import React from 'react';
 import Cart from '../Cart/Cart';
 import UserItem from '../UserItem/UserItem';
-import styles from './UserLists.module.css'
 
 const UserLists = ({users,isConnections, handleConnectUser, selectedUsers}) => {
 
